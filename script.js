@@ -17,7 +17,7 @@ function drawFace() {
 }
 
 //Gets time using date function and changes css of the hands accordingly.
-function localTime() {
+setInterval(function localTime() {
     //Multiply the given time to equally increment the 360 degrees of the clock face. 
     let d = new Date();
     seconds = d.getSeconds() * 6;
@@ -27,7 +27,7 @@ function localTime() {
     secHand.style.transform = `rotate(${seconds}deg)`;
     minHand.style.transform = `rotate(${minutes}deg)`;
     hourHand.style.transform = `rotate(${hours}deg)`;
-}
+}, 1000);
 
 function runProgram() {
     drawFace();
