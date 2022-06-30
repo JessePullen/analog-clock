@@ -4,6 +4,7 @@ const secHand = document.querySelector('.sec-hand');
 const minHand = document.querySelector('.min-hand');
 const hourHand = document.querySelector('.hour-hand');
 
+//Draws each hour indicator for the clock face by changing degrees every step of the loop.
 function drawFace() {
     degrees = 0;
     for (let i = 0; i < 6; i++) {
@@ -15,9 +16,9 @@ function drawFace() {
     }
 }
 
+//Gets time using date function and changes css of the hands accordingly.
 function localTime() {
-
-    //Gets time using date function and times by degrees for each tick, 
+    //Multiply the given time to equally increment the 360 degrees of the clock face. 
     let d = new Date();
     seconds = d.getSeconds() * 6;
     minutes = d.getMinutes() * 6;
