@@ -43,23 +43,23 @@ body {
     z-index: 4;
     height: 20px;
     width: 20px;
-    background-color: #222;
+    background-color: #111;
     border-radius: 50%;
 }
 
 .sec-hand {
     position: absolute;
     z-index: 3;
-    border-left: 1px solid;
-    height: 500px;
-    border-image: linear-gradient(to bottom, red 50%, transparent 50%) 1 100%;
+    border-left: 3px solid;
+    height: 475px;
+    border-image: linear-gradient(to bottom, crimson 50%, transparent 50%) 1 100%;
 }
 
 .min-hand {
     position: absolute;
     z-index: 2;
-    border-left: 7px solid;
-    height: 525px;
+    border-left: 9px solid;
+    height: 500px;
     border-image: linear-gradient(to bottom, #111 50%, transparent 50%) 1 100%;
 }
 
@@ -67,6 +67,6 @@ body {
     position: absolute;
     z-index: 1;
     border-left: 12px solid;
-    height: 400px;
+    height: 350px;
     border-image: linear-gradient(to bottom, #111 50%, transparent 50%) 1 100%;
 }
