@@ -15,5 +15,22 @@ function drawFace() {
     }
 }
 
-drawFace();
+function localTime() {
 
+    //Gets time using date function and times by degrees for each tick, 
+    let d = new Date();
+    seconds = d.getSeconds() * 6;
+    minutes = d.getMinutes() * 6;
+    hours = d.getHours() * 30;
+
+    secHand.style.transform = `rotate(${seconds}deg)`;
+    minHand.style.transform = `rotate(${minutes}deg)`;
+    hourHand.style.transform = `rotate(${hours}deg)`;
+}
+
+function runProgram() {
+    drawFace();
+    localTime();
+}
+
+runProgram();
