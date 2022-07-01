@@ -1,31 +1,46 @@
-html,
-body {
-    height: 95%;
-}
-
 body {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
+h2 {
+    font-family: tahoma, sans-serif;
+    font-weight: 100;
+}
+
+.top-section {
+    height: 50%;
+    padding-top: 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.heading {
+    display: flex;
+    justify-content: center;
+}
+
+/* top-section clock */
 
 .clock {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 600px;
-    width: 600px;
+    height: 400px;
+    width: 400px;
     background-color: #333;
     border-radius: 50%;
-    border: 25px solid #222;
+    border: 15px solid #222;
 }
 
 .clock-face {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 450px;
-    width: 450px;
+    height: 300px;
+    width: 300px;
     border-radius: 50%;
     background-color: #333;
     position: absolute;
@@ -34,8 +49,8 @@ body {
 
 .hour-indicator {
     position: absolute;
-    border-left: 6px solid white;
-    height: 575px;
+    border-left: 5px solid white;
+    height: 375px;
 }
 
 .centre {
@@ -47,26 +62,52 @@ body {
     border-radius: 50%;
 }
 
+/* Clock hands */
+
 .sec-hand {
     position: absolute;
     z-index: 3;
-    border-left: 3px solid;
-    height: 475px;
+    border-left: 2px solid;
+    height: 325px;
     border-image: linear-gradient(to bottom, crimson 50%, transparent 50%) 1 100%;
 }
 
 .min-hand {
     position: absolute;
     z-index: 2;
-    border-left: 9px solid;
-    height: 500px;
+    border-left: 7px solid;
+    height: 350px;
     border-image: linear-gradient(to bottom, #111 50%, transparent 50%) 1 100%;
 }
 
 .hour-hand {
     position: absolute;
     z-index: 1;
-    border-left: 12px solid;
-    height: 350px;
+    border-left: 10px solid;
+    height: 200px;
     border-image: linear-gradient(to bottom, #111 50%, transparent 50%) 1 100%;
+}
+
+/* bottom section */
+
+.bottom-section {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 100px;
+    width: 1500px;
+}
+
+.city-clock {
+    display: flex;
+    height: 200px;
+    width: 200px;
+    background-color: #333;
+    border-radius: 50%;
+    border: 10px solid #222;
+}
+
+.city-heading {
+    text-align: center;
+    font-family: tahoma, sans-serif;
+    padding: 10px;
 }

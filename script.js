@@ -3,6 +3,30 @@ const clockFace = document.querySelector('.clock-face');
 const secHand = document.querySelector('.sec-hand');
 const minHand = document.querySelector('.min-hand');
 const hourHand = document.querySelector('.hour-hand');
+const bottomSection = document.querySelector('.bottom-section');
+
+//Creates a div to group the city name to its time and inside creates a div for the heading and clocks
+function drawCityClocks() {
+    for (let i = 0; i < 4; i++) {
+        const cityGrouping = document.createElement('div');
+        bottomSection.appendChild(cityGrouping);
+
+        const cityClock = document.createElement('div');
+        cityClock.classList.add('city-clock');
+        cityClock.classList.add('city-clock-' + i);
+        cityGrouping.appendChild(cityClock);
+
+        const cityHeading = document.createElement('div');
+        cityHeading.classList.add('city-heading');
+        cityHeading.classList.add('city-heading-' + i);
+        cityGrouping.appendChild(cityHeading);
+    }
+    //Gets dynamically created class names and assigns city name to each div
+    document.querySelector('.city-heading-0').textContent = 'London';
+    document.querySelector('.city-heading-1').textContent = 'Paris';
+    document.querySelector('.city-heading-2').textContent = 'New York';
+    document.querySelector('.city-heading-3').textContent = 'Tokyo';
+}
 
 //Draws each hour indicator for the clock face by changing degrees every step of the loop.
 function drawFace() {
@@ -31,7 +55,7 @@ setInterval(function localTime() {
 
 function runProgram() {
     drawFace();
-    localTime();
+    drawCityClocks();
 }
 
 runProgram();
