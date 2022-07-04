@@ -99,6 +99,8 @@ h2 {
 
 .city-clock {
     display: flex;
+    justify-content: center;
+    align-items: center;
     height: 200px;
     width: 200px;
     background-color: #333;
@@ -106,8 +108,26 @@ h2 {
     border: 10px solid #222;
 }
 
+.city-clock-face {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: #333;
+    position: absolute;
+    z-index: 3;
+}
+
 .city-heading {
     text-align: center;
     font-family: tahoma, sans-serif;
     padding: 10px;
+}
+
+.city-hour-indicator {
+    position: absolute;
+    border-left: 3px solid white;
+    height: 185px;
 }

@@ -5,7 +5,7 @@ const minHand = document.querySelector('.min-hand');
 const hourHand = document.querySelector('.hour-hand');
 const bottomSection = document.querySelector('.bottom-section');
 
-//Creates a div to group the city name to its time and inside creates a div for the heading and clocks
+//Creates a div to group the city name to its time and inside creates the html elements of the clocks.
 function drawCityClocks() {
     for (let i = 0; i < 4; i++) {
         const cityGrouping = document.createElement('div');
@@ -20,6 +20,12 @@ function drawCityClocks() {
         cityHeading.classList.add('city-heading');
         cityHeading.classList.add('city-heading-' + i);
         cityGrouping.appendChild(cityHeading);
+
+        const cityClockFace = document.createElement('div');
+        cityClockFace.classList.add('city-clock-face');
+        cityClock.appendChild(cityClockFace);
+
+        drawFaceCity(cityClock);
     }
     //Gets dynamically created class names and assigns city name to each div
     document.querySelector('.city-heading-0').textContent = 'London';
@@ -36,6 +42,18 @@ function drawFace() {
         hourIndicator.classList.add('hour-indicator');
         hourIndicator.style.transform = `rotate(${degrees}deg)`;
         clock.appendChild(hourIndicator);
+        degrees += 30;
+    }
+}
+
+//Instead applies a different class and a parameter for the clock number in the for loop.
+function drawFaceCity(clockNumber) {
+    degrees = 0;
+    for (let i = 0; i < 6; i++) {
+        const hourIndicator = document.createElement('div');
+        hourIndicator.classList.add('city-hour-indicator');
+        hourIndicator.style.transform = `rotate(${degrees}deg)`;
+        clockNumber.appendChild(hourIndicator);
         degrees += 30;
     }
 }
