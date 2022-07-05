@@ -31,14 +31,17 @@ function drawCityClocks() {
 
         const citySecHand = document.createElement('div');
         citySecHand.classList.add('city-sec-hand');
+        citySecHand.classList.add('city-sec-hand-' + i);
         cityClock.appendChild(citySecHand);
 
         const cityMinHand = document.createElement('div');
         cityMinHand.classList.add('city-min-hand');
+        cityMinHand.classList.add('city-min-hand-' + i);
         cityClock.appendChild(cityMinHand);
 
         const cityHourHand = document.createElement('div');
         cityHourHand.classList.add('city-hour-hand');
+        cityHourHand.classList.add('city-hour-hand-' + i);
         cityClock.appendChild(cityHourHand);
 
         drawFaceCity(cityClock);
@@ -48,6 +51,8 @@ function drawCityClocks() {
     document.querySelector('.city-heading-1').textContent = 'Paris';
     document.querySelector('.city-heading-2').textContent = 'New York';
     document.querySelector('.city-heading-3').textContent = 'Tokyo';
+
+    setInterval(cityClockTime, 1000);
 }
 
 //Draws each hour indicator for the clock face by changing degrees every step of the loop.
@@ -75,21 +80,38 @@ function drawFaceCity(clockNumber) {
 }
 
 //Gets time using date function and changes css of the hands accordingly.
-setInterval(function localTime() {
+function localTime() {
     //Multiply the given time to equally increment the 360 degrees of the clock face. 
-    let d = new Date();
-    seconds = d.getSeconds() * 6;
-    minutes = d.getMinutes() * 6;
-    hours = d.getHours() * 30;
+    let date = new Date();
+    seconds = date.getSeconds() * 6;
+    minutes = date.getMinutes() * 6;
+    hours = date.getHours() * 30;
 
     secHand.style.transform = `rotate(${seconds}deg)`;
     minHand.style.transform = `rotate(${minutes}deg)`;
     hourHand.style.transform = `rotate(${hours}deg)`;
-}, 1000);
+}
 
 function runProgram() {
     drawFace();
+    setInterval(localTime, 1000);
     drawCityClocks();
 }
 
 runProgram();
+
+//Gets time as string from timezone and changes the css of the hands.
+function cityClockTime() {
+    let date = new Date();
+    let parisDate = date.toLocaleTimeString('en-US', {timeZone: 'America/New_York'});
+
+    newDate = parisDate.split(':');
+
+    seconds = date.getSeconds() * 6;
+    minutes = newDate[1] * 6;
+    hours = newDate[0] * 30;
+
+    document.querySelector('.city-sec-hand').style.transform = `rotate(${seconds}deg)`;
+    document.querySelector('.city-min-hand').style.transform = `rotate(${minutes}deg)`;
+    document.querySelector('.city-hour-hand').style.transform = `rotate(${hours}deg)`;
+}
