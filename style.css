@@ -131,3 +131,12 @@ h2 {
     border-left: 3px solid white;
     height: 185px;
 }
+
+.city-centre {
+    position: absolute;
+    z-index: 4;
+    height: 10px;
+    width: 10px;
+    background-color: #111;
+    border-radius: 50%;
+}

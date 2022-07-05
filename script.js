@@ -25,6 +25,10 @@ function drawCityClocks() {
         cityClockFace.classList.add('city-clock-face');
         cityClock.appendChild(cityClockFace);
 
+        const centre = document.createElement('div');
+        centre.classList.add('city-centre');
+        cityClock.appendChild(centre);
+
         drawFaceCity(cityClock);
     }
     //Gets dynamically created class names and assigns city name to each div
