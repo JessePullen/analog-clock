@@ -117,7 +117,7 @@ h2 {
     border-radius: 50%;
     background-color: #333;
     position: absolute;
-    z-index: 3;
+    z-index: 1;
 }
 
 .city-heading {
@@ -139,4 +139,28 @@ h2 {
     width: 10px;
     background-color: #111;
     border-radius: 50%;
+}
+
+.city-sec-hand {
+    position: absolute;
+    z-index: 3;
+    border-left: 2px solid;
+    height: 160px;
+    border-image: linear-gradient(to bottom, crimson 50%, transparent 50%) 1 100%;
+}
+
+.city-min-hand {
+    position: absolute;
+    z-index: 2;
+    border-left: 4px solid;
+    height: 170px;
+    border-image: linear-gradient(to bottom, #111 50%, transparent 50%) 1 100%;
+}
+
+.city-hour-hand {
+    position: absolute;
+    z-index: 1;
+    border-left: 7px solid;
+    height: 100px;
+    border-image: linear-gradient(to bottom, #111 50%, transparent 50%) 1 100%;
 }

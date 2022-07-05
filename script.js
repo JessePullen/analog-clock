@@ -29,6 +29,18 @@ function drawCityClocks() {
         centre.classList.add('city-centre');
         cityClock.appendChild(centre);
 
+        const citySecHand = document.createElement('div');
+        citySecHand.classList.add('city-sec-hand');
+        cityClock.appendChild(citySecHand);
+
+        const cityMinHand = document.createElement('div');
+        cityMinHand.classList.add('city-min-hand');
+        cityClock.appendChild(cityMinHand);
+
+        const cityHourHand = document.createElement('div');
+        cityHourHand.classList.add('city-hour-hand');
+        cityClock.appendChild(cityHourHand);
+
         drawFaceCity(cityClock);
     }
     //Gets dynamically created class names and assigns city name to each div
