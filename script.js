@@ -51,8 +51,6 @@ function drawCityClocks() {
     document.querySelector('.city-heading-1').textContent = 'Paris';
     document.querySelector('.city-heading-2').textContent = 'New York';
     document.querySelector('.city-heading-3').textContent = 'Tokyo';
-
-    setInterval(cityClockTime, 1000);
 }
 
 //Draws each hour indicator for the clock face by changing degrees every step of the loop.
@@ -92,18 +90,18 @@ function localTime() {
     hourHand.style.transform = `rotate(${hours}deg)`;
 }
 
-function runProgram() {
-    drawFace();
-    setInterval(localTime, 1000);
-    drawCityClocks();
+//Sets a timezone for each clock.
+function globalTimes() {
+    cityClockTime('Europe/London', 0);
+    cityClockTime('Europe/Paris', 1);
+    cityClockTime('America/New_York', 2);
+    cityClockTime('Asia/Tokyo', 3);
 }
 
-runProgram();
-
 //Gets time as string from timezone and changes the css of the hands.
-function cityClockTime() {
+function cityClockTime(city, clockNumber) {
     let date = new Date();
-    let parisDate = date.toLocaleTimeString('en-US', {timeZone: 'America/New_York'});
+    let parisDate = date.toLocaleTimeString('en-US', {timeZone: city});
 
     newDate = parisDate.split(':');
 
@@ -111,7 +109,16 @@ function cityClockTime() {
     minutes = newDate[1] * 6;
     hours = newDate[0] * 30;
 
-    document.querySelector('.city-sec-hand').style.transform = `rotate(${seconds}deg)`;
-    document.querySelector('.city-min-hand').style.transform = `rotate(${minutes}deg)`;
-    document.querySelector('.city-hour-hand').style.transform = `rotate(${hours}deg)`;
+    document.querySelector('.city-sec-hand-' + clockNumber).style.transform = `rotate(${seconds}deg)`;
+    document.querySelector('.city-min-hand-' + clockNumber).style.transform = `rotate(${minutes}deg)`;
+    document.querySelector('.city-hour-hand-' + clockNumber).style.transform = `rotate(${hours}deg)`;
 }
+
+function runProgram() {
+    drawFace();
+    drawCityClocks();
+    setInterval(localTime, 1000);
+    setInterval(globalTimes, 1000);
+}
+
+runProgram();
