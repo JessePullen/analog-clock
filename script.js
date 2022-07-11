@@ -87,7 +87,7 @@ function localTime() {
     let date = new Date();
     seconds = date.getSeconds() * 6;
     minutes = date.getMinutes() * 6;
-    hours = date.getHours() * 30;
+    hours = (date.getHours() * 30) + (minutes / 12);
 
     secHand.style.transform = `rotate(${seconds}deg)`;
     minHand.style.transform = `rotate(${minutes}deg)`;
@@ -111,7 +111,7 @@ function cityClockTime(city, clockNumber) {
 
     seconds = date.getSeconds() * 6;
     minutes = newDate[1] * 6;
-    hours = newDate[0] * 30;
+    hours = (newDate[0] * 30) + (minutes / 12);
 
     document.querySelector('.city-sec-hand-' + clockNumber).style.transform = `rotate(${seconds}deg)`;
     document.querySelector('.city-min-hand-' + clockNumber).style.transform = `rotate(${minutes}deg)`;
