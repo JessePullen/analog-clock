@@ -44,13 +44,17 @@ function drawCityClocks() {
         cityHourHand.classList.add('city-hour-hand-' + i);
         cityClock.appendChild(cityHourHand);
 
-        drawFaceCity(cityClock);
+        drawFaceCityClocks(cityClock);
     }
-    //Gets dynamically created class names and assigns city name to each div
-    document.querySelector('.city-heading-0').textContent = 'London';
-    document.querySelector('.city-heading-1').textContent = 'Paris';
-    document.querySelector('.city-heading-2').textContent = 'New York';
-    document.querySelector('.city-heading-3').textContent = 'Tokyo';
+    nameClocks('London', 0);
+    nameClocks('Paris', 1);
+    nameClocks('New York', 2);
+    nameClocks('Tokyo', 3);
+}
+
+//Gets dynamically created class names and assigns city name to each div
+function nameClocks(city, clockNumber) {
+    document.querySelector('.city-heading-' + clockNumber).textContent = city;
 }
 
 //Draws each hour indicator for the clock face by changing degrees every step of the loop.
@@ -66,7 +70,7 @@ function drawFace() {
 }
 
 //Instead applies a different class and a parameter for the clock number in the for loop.
-function drawFaceCity(clockNumber) {
+function drawFaceCityClocks(clockNumber) {
     degrees = 0;
     for (let i = 0; i < 6; i++) {
         const hourIndicator = document.createElement('div');
