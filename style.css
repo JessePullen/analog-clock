@@ -62,7 +62,7 @@ h2 {
     border-radius: 50%;
 }
 
-/* Clock hands */
+/* clock hands */
 
 .sec-hand {
     position: absolute;
@@ -109,9 +109,6 @@ h2 {
 }
 
 .city-clock-face {
-    /* display: flex;
-    justify-content: center;
-    align-items: center; */
     height: 150px;
     width: 150px;
     border-radius: 50%;
@@ -140,6 +137,8 @@ h2 {
     background-color: #111;
     border-radius: 50%;
 }
+
+/* bottom clock hands */
 
 .city-sec-hand {
     position: absolute;

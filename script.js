@@ -47,8 +47,8 @@ function drawCityClocks() {
         drawFaceCityClocks(cityClock);
     }
     nameClocks('London', 0);
-    nameClocks('Paris', 1);
-    nameClocks('New York', 2);
+    nameClocks('New York', 1);
+    nameClocks('Paris', 2);
     nameClocks('Tokyo', 3);
 }
 
@@ -97,8 +97,8 @@ function localTime() {
 //Sets a timezone for each clock.
 function globalTimes() {
     cityClockTime('Europe/London', 0);
-    cityClockTime('Europe/Paris', 1);
-    cityClockTime('America/New_York', 2);
+    cityClockTime('America/New_York', 1);
+    cityClockTime('Europe/Paris', 2);
     cityClockTime('Asia/Tokyo', 3);
 }
 
